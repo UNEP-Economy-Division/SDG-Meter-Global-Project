@@ -42,7 +42,7 @@ To launch the all project run:
 
 `docker-compose up --build -d`  
 --build: In order to rebuild the containers   
--d: To launch the container in background
+-d: To launch the containers in background
 
 **Warning:** Be sure to update the *hostName* variable in [script.js](frontend/code/js/scripts.js) line 84:
 - development: localhost
