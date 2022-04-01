@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>UNEP SDG Project</title>
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/circular.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</head>
+    <body id="page-top">
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+				<!--  <a class="navbar-brand" href="#page-top"><img src="assets/un_environment_logo.png" alt="UNEP"  /></a> -->
+							<a class="navbar-brand" href="https://www.unep.org/"><img src="assets/image.svg" alt="UNEP" width=170 height=70/></a>
+							<a class="navbar-brand" href="https://www.unep.org/"><img src="https://www.unep.org/themes/custom/UNEP_3Spot/img/SDG_Wheel_Transparent_WEB.png" alt="UNEP" width=75 height=auto/></a>
+							<p><h3>SDG METER</h3></p><p style='font-style: italic;'><br>Measuring how your text is related to the Sustainable Development Goals.</p>
+							<!-- <a class="navbar-brand" href="#page-top"><img src="assets/Logosdg.png" alt="UNEP"   /></a>  -->
+							   
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#sdgs">SDG</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center" color=#0083b3>
+            <div class="container d-flex align-items-center flex-column">
+               
+      
+                <form>
+                    <div class="form-group">
+
+                        <!-- Masthead Heading-->
+						
+                        <br>
+                        <h1 class="masthead-heading text-uppercase mb-0"> SDG Meter your text</h1>
+
+                        <br><br>
+
+                        <textarea id="userText" class="form-control text" cols="60" rows="4" maxlength="512" placeholder="Enter your Text here (English Text only)"></textarea>
+                        <p class="text-right" style="text-align:right;"><span class="count">0</span>/512</p>
+						<br>
+                    </div>
+                    <div class="text-center mt-4">
+
+                        <input type="button" class="btn btn-xl btn-outline-light"  value="Find similarities with SDGs!" onclick="success()"/>
+					<br>
+                    </div>
+
+
+
+
+                </form>
+                <script>
+
+                    $(document).ready(function () {
+
+                        $(".text").keypress(function () {
+                            var words = $(this).val();
+                            $(".count").text(words.length);
+                        });
+
+                    });
+
+
+                    $("textarea").each(function () {
+                        this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+                    }).on("input", function () {
+                        this.style.height = "auto";
+                        this.style.height = (this.scrollHeight) + "px";
+                    });
+                </script>
+
+
+
+
+
+
+
+
+
+               
+                <!-- Masthead Subheading-->
+                <!-- <p class="masthead-subheading font-weight-light mb-0">Result will be displayed here..</p>-->
+				<br>
+				<br>
+                <div id="algoResult" style="display:none">
+                    <br>
+					<br>
+                 
+				
+				 
+                </div>
+
+                
+            </div>
+        </header>
+        <!-- Portfolio Section-->
+        <section class="page-section portfolio" id="sdgs">
+            <div class="container">
+                <!-- Portfolio Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">SDGs</h2>
+				<br>
+				<br>
+               
+                <!-- Portfolio Grid Items-->
+				
+                <div class="row justify-content-center">
+                    <!-- Portfolio Item 1-->
+									<div class="row">
+					<div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_01.gif" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2-->
+                    
+					<div class="col-sm">	
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_02.gif" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 3-->
+                    <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_03.gif" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 4-->
+                    <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_04.gif" alt="..." />
+                        </div>
+                    </div>
+					<div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_05.gif" alt="..." />
+                        </div>
+                    </div>
+					</div>
+					<br>
+					<p><br>
+					<p>
+                    <!-- Portfolio Item 5-->
+                    <div class="row">
+					
+                    <!-- Portfolio Item 6-->
+                    <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_06.gif" alt="..." />
+                        </div>
+                    </div>
+                    
+
+                    <!-- Portfolio Item 7-->
+                    <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_07.gif" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 8-->
+                    <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal8">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_08.gif" alt="..." />
+                        </div>
+                    </div>
+					<!-- Portfolio Item 9-->
+					 <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal9">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_09.gif" alt="..." />
+                        </div>
+                    </div>
+					<!-- Portfolio Item 10-->
+                    <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal10">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_10.gif" alt="..." />
+                        </div>
+                    </div>
+					</div>
+					<br>
+					<p><br>
+					<p>
+                   
+                   <div class="row">
+					 
+                    
+                    <!-- Portfolio Item 11-->
+                   <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal11">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_11.gif" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 12-->
+                    <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal12">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_12.gif" alt="..." />
+                        </div>
+                    </div>
+                    
+
+                    <!-- Portfolio Item 13-->
+                    
+					<div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal13">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_13.gif" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 14-->
+                    <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal14">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_14.gif" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 15-->
+                    <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal15">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_15.gif" alt="..." />
+                        </div>
+                    </div>
+					</div>
+					<br>
+					<p><br>
+					<p>
+					
+					 
+					 
+                   <div class="row">
+                  
+                    <!-- Portfolio Item 16-->
+                    <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal16">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_16.gif" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 17-->
+                    <div class="col-sm">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal17">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/images/E_GIF_17.gif" alt="..." />
+                        </div>
+                    </div>
+					</div>
+					
+					<br>
+					<p><br>
+					<p>
+
+                </div>
+                <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-outline-light" href="https://sdgs.un.org/">
+                        Find more about other SDGs
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- About Section-->
+        <section class="page-section bg-primary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+               <br>
+			   <br>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class="col-lg-4 ms-auto"><p class="lead">A myriad of textual documents produced/consumed by UNEP need to be mapped to the SDGs (project proposals, reports, briefings, etc.). Such mapping exercises are time consuming for experts and rely on personal knowledge of the links between topics and the SDGs. While UNEP has experts in many fields, links to the SDGs that are outside our expertise can be overlooked. Our SDG Meter web platform is proposed as a tool to help analyze text via a neural network-based technique for natural language processing (NLP) pre-training that assesses the relationship to each of the 17 SDGs. </p></div>
+                    <div class="col-lg-4 me-auto">
+                        <p class="lead">
+                            This technique is based on the BERT (Bidirectional Encoder Representations from Transformers) model developped by Google researchers <a href="https://arxiv.org/pdf/1810.04805.pdf" style="color:orange">(see paper here)</a>  with the use of the multilabel text classification feature.
+                            Our algorithm has been trained with about 3000 texts and labels extracted from the categories "News", "Guest articles" and "Policy Briefs" of the <a href="https://sdg.iisd.org/" style="color:orange">IISD-SDG website. </a>
+                            Our method has an accuracy of 98% on 500, which means that for 500 test texts our method correctly classifies 490 texts. To have an idea of all the capacities of BERT and also its functioning explained in a very simple way we recommend you this short <a href="https://youtu.be/ioGry-89gqE" style="color:orange">video.</a>
+                        </p>
+                    </div>
+                </div>
+                <!-- About Section Button-->
+
+            </div>
+        </section>
+        <!-- Contact Section-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <!-- Contact Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Room for improvement?</h2>
+				<br>
+                <!-- Contact Section Form-->
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-7">
+
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd59hCwhhM4LOdomoTH9s2PS7-qb4XpIcRp_WTLszcB8kWLVw/viewform?embedded=true" width="800" height="1100" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Location-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <p class="lead mb-0">
+                            ISEP
+                            <br />
+                            NDL, Paris
+                        </p>
+                    </div>
+                    <!-- Footer Social Icons-->
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/SustDev"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/SustDev"><i class="fab fa-fw fa-twitter"></i></a>
+
+                    </div>
+                    <!-- Footer About Text-->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">About This project</h4>
+                        <p class="lead mb-0">
+                            Web project to visualize the algorithm developed!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+         <!-- Copyright Section-->
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>SGD meter - UNEP</small></div>
+        </div>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">No Poverty</h2>
+                                     <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG1.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Even before the coronavirus disease (COVID-19) pandemic, progress towards Goal 1 had slowed, and the world was not on track to ending extreme poverty by 2030. Now, as the world anticipates the worst economic fallout since the Great Depression, tens of millions of people will be pushed back into poverty, undoing years of steady improvement. As the economic impacts of the pandemic begin to be felt more strongly, the importance of robust social protection systems for safeguarding the poor and vulnerable is becoming clearer than ever. So, too, is the need for effective emergency preparedness, both for pandemics and other hazards that cause disasters.</p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Zero Hunger</h2>
+                                     <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG2.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Eradicating hunger and achieving food security remains a challenge, more so in the wake of the COVID-19 crisis. At the global level, hunger and food insecurity have been on the rise, and malnutrition still affects millions of children. The situation is likely to get worse owing to economic slowdowns and disruptions caused by a pandemic-triggered recession. In addition to COVID-19, the desert locust upsurge in six Eastern African countries and Yemen – where 35 million people are already experiencing acute food insecurity – remains alarming. To mitigate the threats posed by the pandemic to vulnerable populations, countries need to take immediate action to keep trade flowing, to strengthen food supply chains and to increase agricultural production.</p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Good health and well-being</h2>
+                                     <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG3.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">Sustainable Development Goal 3 of the 2030 Agenda for Sustainable Development is to “ensure healthy lives and promoting well-being for all at all ages”. The associated targets aim to reduce the global maternal mortality ratio; end preventable deaths of newborns and children; end the epidemics of AIDS, tuberculosis, malaria and other communicable diseases; reduce mortality from non-communicable diseases; strengthen the prevention and treatment of substance abuse; halve the number of deaths and injuries from road traffic accidents; ensure universal access to sexual and reproductive health-care services; achieve universal health coverage; and reduce the number of deaths and illnesses from hazardous chemicals and pollution.</p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Quality Education for all</h2>
+                                  <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/sdg4.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        Education for all has always been an integral part of the sustainable development agenda. The World Summit on Sustainable Development (WSSD) in 2002 adopted the Johannesburg Plan of Implementation (JPOI) which in its Section X, reaffirmed both the Millennium Development Goal 2 in achieving universal primary education by 2015 and the goal of the Dakar Framework for Action on Education for All to eliminate gender disparity in primary and secondary education by 2005 and at all levels of education by 2015. The JPOI addressed the need to integrate sustainable development into formal education at all levels, as well as through informal and non-formal education opportunities.
+
+                                        There is growing international recognition of Education for Sustainable Development (ESD) as an integral element of quality education and a key enabler for sustainable development. Both the Muscat Agreement adopted at the Global Education For All Meeting (GEM) in 2014 and the proposal for Sustainable Development Goals (SDGs) developed by the Open Working Group of the UN General Assembly on SDGs (OWG) include ESD in the proposed targets for the post- 2015 agenda. The proposed Sustainable Development Goal 4 reads "Ensure inclusive and equitable quality education and promote life-long learning opportunities for all" and includes a set of associated targets.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 5-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Gender Equality</h2>
+                                    <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG1.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        On the occasion of the General Debate of the 66th Session of the General Assembly held in September 2011, United Nations Secretary-General BAN KI-MOON highlighted in his Report “We the Peoples”, the crucial role of gender equality as driver of development progress, recognizing that the potential of women had not been fully realized, owing to, inter alia, persistent social, economic and political inequalities.
+
+                                        Gender inequalities are still deep-rooted in every society. Women suffer from lack of access to decent work and face occupational segregation and gender wage gaps. In many situations, they are denied access to basic education and health care and are victims of violence and discrimination. They are under-represented in political and economic decision-making processes.
+
+                                        With the aim of better addressing these challenges and to identify a single recognized driver to lead and coordinate UN activities on gender equality issues, UN Women was established in 2010.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 6-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Clean Water and Sanitation</h2>
+                                    <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG6.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        The COVID-19 pandemic poses an additional impediment, impairing access for billions of people to safely managed drinking water, sanitation and hygiene services – services desperately needed to prevent the virus from spreading.
+
+                                        Now more than ever the world needs to transform the way it manages its water resources and delivers water and sanitation services for billions of people. Urgent action is needed to overcome this global crisis, as it is affecting all countries around the world, socially, economically and environmentally.
+
+                                        Sustainable Development Goal 6 (SDG 6) on water and sanitation, adopted by United Nations Member States at the 2015 UN Summit as part of the 2030 Agenda for Sustainable Development, provides the blueprint for ensuring availability and sustainable management of water and sanitation for all.
+
+                                        As a direct response to the Decade of Action and Delivery for Sustainable Development called for by Heads of State and Government at the SDG Summit in 2019, the UN system launched the SDG 6 Global Acceleration Framework in July 2020, to step up progress towards the Sustainable Development Goals and put the world on track to realize their targets by 2030. We call upon all stakeholders to galvanize actions around the framework in order to accelerate achievement of the water-related goals and targets and overcome the global crisis.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 7-->
+        <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" aria-labelledby="portfolioModal7" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Affordable and clean energy</h2>
+                                     <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG7.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        Despite significant progress over the last decade on improving access to electricity, increasing the use of renewable energy in the electricity sectors, and improving energy efficiency, the world is still short of achieving affordable, reliable, sustainable and modern energy for all. Clean and sustainable energy should be at the heart of the COVID-19 response and fight against climate change.
+                                        In 2019, 66% of the global population had access to clean cooking fuels and technologies. For the period 2010-2019 much of the increase in access to clean fuels and technologies was dominated by the most populous low- and middle-income countries, Brazil, China, India, Indonesia and Pakistan. People relying on polluting fuels and technologies are exposed to high levels of household air pollution, with serious consequences for their cardiovascular and respiratory system, increasing their vulnerability to diseases including COVID-19.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 8-->
+        <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Decent work and economic growth</h2>
+                                    <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG8.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        Before the pandemic hit in 2020, average growth of the economy had already slowed. The COVID-19 pandemic has caused the worst global economic recession since the Great Depression and massive damage to working time and income. In 2020, 8.8% of global working hours were lost (relative to the fourth quarter of 2019), equivalent to 255 million fulltime job, which is approximately four times greater than the loss during the global financial crisis in 2009. Young workers and women were particularly hard hit by the crisis in the labour market. The global economy is slowly recovering, although it may remain below pre-pandemic trends for a prolonged period.
+                                        In 2020, almost one third of the 107 countries with data have formulated and operationalized a youth employment strategy, while 44 (41.1%) of them have such strategies but did not provide conclusive evidence on their implementation, and just under a quarter of them (24.3%) are in the process of developing one.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 9-->
+        <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Industry, innovation and infrastructure</h2>
+                                    <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG9.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        The year before COVID-19 triggered the greatest economic crisis in decades, manufacturing value added had seen the slowest year-on-year growth rate since 2012, primarily because of tariff and trade tensions between the most dominant economies. The COVID-19 pandemic has hit the manufacturing and transport industries hard, causing job losses and declining incomes for workers in these sectors. The crisis poses unprecedented challenges to global value chains by disrupting both the supply of goods and the demand for them. Small-scale industries have been severely affected by the pandemic and many continue to face existential challenges. However, the COVID-19 crisis also offers opportunities to foster industrialization and bring ground-breaking technologies to developing countries.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 10-->
+        <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Reduced inequalities</h2>
+                                    <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG10.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        Before the pandemic hit, modest gains had been made in reducing inequality in some areas, for instance, reducing income inequality in some countries, continuing preferential trade status to lower-income countries, and reducing transaction costs of remittances. However, inequality persists in its various forms, whether income, wealth, opportunities or other dimensions. The pandemic is now exacerbating existing inequalities within and among countries and hitting the most vulnerable people and the poorest countries hardest and is projected to push back the poorest countries a full 10 years on their SDG progress. Globally, refugees were at the highest absolute number on record in 2020. Even amidst strict COVID-19 mobility restrictions across the globe, thousands of migrants died along the migratory journey.
+
+                                        The World Economic Outlook October 2020 estimates that COVID-19 increases the average Gini index for emerging market and developing economies by more than 6%, with an even larger impact for low-income countries.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 11-->
+        <div class="portfolio-modal modal fade" id="portfolioModal11" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Sustainable cities and communities</h2>
+                                    <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG11.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        Before the pandemic, cities experienced rising slum dweller populations, worsening air pollution, minimal open public spaces and limited convenient access to public transport. The COVID-19 direct and indirect impacts are making reaching the goal even more unlikely, with increases in the number of slum dwellers and those who have downgraded to live in slum-like conditions, while also worsening of the quality of life and vulnerabilities for those already living in slums.
+
+                                        Over the years, the number of slum dwellers continues to grow, reaching over 1 billion in 2018. Slum-dwellers are most prevalent in three regions-- Eastern and South-Eastern Asia (370 million), sub-Saharan Africa (238 million) and Central and Southern Asia (226 million).
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 12-->
+        <div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Responsible consumption and production</h2>
+                                    <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG12.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        For decades, scientists have been laying out how humanity is driving the three planetary crises: the climate crisis, the biodiversity crisis, and the pollution crisis, all linked to unsustainable production and consumption. Changes in consumption and production patterns can help promote decoupling of economic growth and human well-being from resource use and environmental impacts. It can also trigger the transformations envisaged by global commitments on biodiversity, climate and sustainable development at large. COVID-19 provides a window of opportunity to explore more inclusive and equitable development models underpinned by sustainable consumption and production.
+                                        From 2017 to 2020, 83 countries, territories and the EU have shared information on their contribution to the implementation of the 10-Year Framework of Programmes on Sustainable Consumption and Production. In 2020, 136 policies and 27 implementation activities were reported, bringing the total number to over 700. While specific actions have been undertaken to improve the efficiency of resource use in a specific industry or area, this has not resulted in their widespread adoption across sectors and industries.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 13-->
+        <div class="portfolio-modal modal fade" id="portfolioModal13" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Climate Action</h2>
+                                     <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG13.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        Despite setbacks from COVID-19, preliminary data show global greenhouse gas emissions increased in 2020. The past six years, 2015–2020, are likely to be the six warmest on record. Climate change puts the achievement of many SDGs at risk. In order to limit warming to 1.5°C above pre-industrial levels as called for in the Paris Agreement, global efforts would need to reach net zero CO2 emissions globally around 2050.
+                                        Climate-specific financial support reported by Annex I Parties continues to increase, reaching an annual average of $48.7 billion in 2017-2018. This represents an increase of 10% over the previous 2015–2016 period on a comparable basis. While over half of all climate-specific financial support in the period 2017-2018 was targeted to mitigation actions, the share of adaptation support is growing, and many countries are prioritizing adaptation in their provision of financial support.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 14-->
+        <div class="portfolio-modal modal fade" id="portfolioModal14" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Life below water</h2>
+                                     <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG14.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        More than three billion people rely on the ocean for their livelihoods and more than 80% of world merchandise trade by volume is carried by sea. The vast oceans, seas and marine resources are under continual threat from pollution, warming and acidification that are disrupting marine ecosystems and the communities they support. These changes have longterm repercussions that require urgently scaling up protection of marine environments, investment in ocean science and support for small-scale fishery communities and the sustainable management of the oceans.
+
+                                        While efforts to reduce nutrient inputs into coastal zones are showing success in some regions, algal blooms indicate that coastal eutrophication continues to be a challenge. Globally, chlorophyll-a (the pigment responsible for photosynthesis in all plants and algae) anomalies in country exclusive economic zones decreased by 20% from 2018 to 2020.
+
+                                        Ocean acidification is caused by the uptake of atmospheric CO2 by the ocean, resulting in a decreasing pH and acidification of the ocean, threatening marine organisms and ocean services. A limited set of long-term observation sites in the open ocean have shown a continuous decline in pH over the last 20 to 30 years.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 15-->
+        <div class="portfolio-modal modal fade" id="portfolioModal15" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">life on land</h2>
+                                    <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG15.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        Deforestation and forest degradation, continued biodiversity loss, and the ongoing degradation of ecosystems, are having profound consequences for human wellbeing and survival. The world fell short on 2020 targets to halt biodiversity loss. The COVID-19 pandemic has confirmed that by threatening biodiversity, humanity threatens its own survival. While great efforts are being made on expanding sustainable forest management, increasing coverage of key biodiversity areas, and signing up to legislation and treaties to protect biodiversity and ecosystems, much more needs to be done to put the health of the planet at the centre of all our plans and policies.
+                                        The COVID-19 pandemic and the vast subsequent harms to human and economic well-being have starkly illustrated the potential global impact of zoonotic diseases, for which wildlife trade – both legal and illegal - is a potential vector. While certain markets for illegal wildlife products are declining, like that for ivory (decreased by 3.5-fold since 2013), other species are under increasing threat as offenders shift their focus to more lucrative products like pangolin scales. There was, for example, in 2018 a 10-fold increase in the number of whole pangolin equivalents seized since 2014.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 16-->
+        <div class="portfolio-modal modal fade" id="portfolioModal16" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Peace, Justice and strong institutions</h2>
+                                    <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG16.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        The world is still a long way off from achieving the goal of peaceful, just and inclusive societies. Millions of people are still living in fragile and conflict affected states. At the end of 2019, 79.5 million people had been forcibly displaced worldwide, translating to 1% of the global population. The COVID-19 pandemic has exposed inequalities, discrimination and has tested, weakened and even led to shattered rights and protection systems in countries.
+
+                                        Globally, around 437,000 people were victims of homicide in 2019. Lethal violence is, however, slowly decreasing and homicide rates declined from 6.3 victims per 100,000 population in 2015 to 5.9 in 2019. Two-thirds of total homicide victims are concentrated in sub-Saharan Africa and Latin America and the Caribbean, with the former region not yet showing visible signs of decline.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio Modal 17-->
+        <div class="portfolio-modal modal fade" id="portfolioModal17" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Partnerships for the goals</h2>
+                                    <br>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/images/SDG17.png" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        Given that the multilateral and global partnerships were already challenged due to scarce financial resources, trade tensions, technological obstacles and lack of data, the pandemic has added an unprecedented shock to the global system. On top of this, foreign direct investment is under severe pressure and expected to drop by 40%. The numerous fiscal impacts of the pandemic are leading to debt distress in countries and limiting their fiscal and policy space for critical investments in recovery (including accessing vaccines), climate change and the SDGs, threatening to prolong recovery periods. The COVID-19 pandemic has put the spotlight on the crucial role of global partnerships. The inter-connected global economy requires a global response to ensure all countries, in particular developing countries, can address the compounding and parallel health, economic and environmental crises to recover better.
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Close Window
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+       
+
+    </body>
+</html>
+
+
+
+<!-- https://github.com/tigrr/circle-progress -->

@@ -1,0 +1,14 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  web-services:
+    build: ./backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+  front-end:
+    environment:
+      - HOST_NAME=localhost
+    build: ./frontend
+    ports:
+      - "80:80"
+    restart: unless-stopped
