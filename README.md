@@ -22,6 +22,9 @@ This project gathers the frontend and backend parts of the SDG Meter.
 In order to develop on the project, you need first to install python dependencies.  
 It's recommended to use a python virtual environment, for more details look at [the official documentation](https://docs.python.org/3/tutorial/venv.html).  
 
+You need the binary of the model `backend/app/models/finetuned_models/pytorch_model.bin` which is to heavy to be in this repository.  
+Ask someone to get it
+
 To install python dependencies:  
 `pip install -r backend/requirements.txt`
 
