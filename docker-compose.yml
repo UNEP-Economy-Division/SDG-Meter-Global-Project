@@ -1,12 +1,15 @@
 version: "3.9"  # optional since v1.27.0
 services:
+  reverse-proxy:
+    image: nginx:alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    restart: unless-stopped
   web-services:
     build: ./SDG-Backend
     restart: unless-stopped
-    ports:
-      - "5000:5000"
   front-end:
     build: ./SDG-Frontend
-    ports:
-      - "80:80"
     restart: unless-stopped

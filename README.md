@@ -59,3 +59,13 @@ The project will be accessible on the port 80 of the machine: **localhost:80**
 
 To remove the containers:
 > docker-compose down
+
+
+## Nginx
+
+This project used a Nginx reverse-proxy listening on port 80 in order to dispatch the requests to the appropriate service.
+- Requests which begin with **/api** will be redirected to the backend service
+- Other requests will be redirected to the frontend service
+
+To add another service use the syntax below
+> `proxy_pass http://<NAME_OF_THE_SERVICE>:<PORT>;`
