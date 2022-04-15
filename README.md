@@ -18,9 +18,6 @@ This project is the global project for the SDG tool.
 **The main goal is to launch the entire project in production mode.**  
 Do not update directly this project but use the [SDG-Backend](https://github.com/Unep-Isep/SDG-Backend) and [SDG-Frontend](https://github.com/Unep-Isep/SDG-Frontend) projects instead.
 
-- To get changes from the current repository (except submodules) run `git pull`
-- To get changes from the submodules run `git submodule update --remote`
-
 
 ## Setup
 
@@ -35,6 +32,12 @@ The project contains submodules, in order to get them when cloning the project t
 > git submodule init
 
 > git submodule update
+
+
+To update the project:
+
+- To get changes from the current repository (except submodules) run `git pull`
+- To get changes from the submodules run `git submodule update --remote`
 
 For more details on submodules check out the [documentation](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
