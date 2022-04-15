@@ -56,3 +56,6 @@ The project will be accessible on the port 80 of the machine: **localhost:80**
 **Warning:** Be sure to update the *hostName* variable in [script.js](SDG-Frontend/js/scripts.js) line 84:
 - development: localhost
 - production: the IP address of the server / hostname to access the API
+
+To remove the containers:
+> docker-compose down
