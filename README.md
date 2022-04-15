@@ -72,3 +72,7 @@ Moreover, Nginx serves all the html, css, js and images files for the frontend.
 
 To add another service use the syntax below
 > `proxy_pass http://<NAME_OF_THE_SERVICE>:<PORT>;`
+
+## Schema
+
+![](unep_infra.png)
