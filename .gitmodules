@@ -1,6 +1,10 @@
 [submodule "SDG-Backend"]
 	path = SDG-Backend
 	url = https://github.com/Unep-Isep/SDG-Backend.git
+	branch = main
+	recurse = true
 [submodule "SDG-Frontend"]
 	path = SDG-Frontend
 	url = https://github.com/Unep-Isep/SDG-Frontend.git
+	branch = main
+	recurse = true
