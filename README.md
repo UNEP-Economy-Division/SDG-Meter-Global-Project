@@ -53,9 +53,9 @@ To launch the all project run:
 
 The project will be accessible on the port 80 of the machine: **localhost:80**
 
-**Warning:** Be sure to update the *hostName* variable in [script.js](SDG-Frontend/js/scripts.js) line 84:
-- development: localhost
-- production: the IP address of the server / hostname to access the API
+>**Warning:** Be sure to update the *hostName* variable in [script.js](SDG-Frontend/js/scripts.js) line 84:
+>- development: localhost
+>- production: the IP address of the server (62.160.8.100)  
 
 To remove the containers:
 > docker-compose down
@@ -63,9 +63,12 @@ To remove the containers:
 
 ## Nginx
 
-This project used a Nginx reverse-proxy listening on port 80 in order to dispatch the requests to the appropriate service.
+This project uses a Nginx reverse-proxy listening on port 80 in order to dispatch the requests to the appropriate service.
+The configuration is located in the [nginx.conf](nginx.conf) file
 - Requests which begin with **/api** will be redirected to the backend service
-- Other requests will be redirected to the frontend service
+- Other requests will be handled by nginx to serve for the frontend
+
+Moreover, Nginx serves all the html, css, js and images files for the frontend.
 
 To add another service use the syntax below
 > `proxy_pass http://<NAME_OF_THE_SERVICE>:<PORT>;`
