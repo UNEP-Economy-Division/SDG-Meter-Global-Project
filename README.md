@@ -16,12 +16,12 @@ phase using BERT and finally we will present and discuss the obtained results.
 ## Important
 This project is the global project for the SDG tool.  
 **The main goal is to launch the entire project in production mode.**  
-Do not update directly this project but use the [SDG-Backend](https://github.com/Unep-Isep/SDG-Backend) and [SDG-Frontend](https://github.com/Unep-Isep/SDG-Frontend) projects instead.
+Do not update directly this project but use the [SDG-Backend](https://github.com/UNEP-Economy-Division/SDG-Meter-Backend) and [SDG-Frontend](https://github.com/UNEP-Economy-Division/SDG-Meter-Frontend) projects instead.
 
 
 ## Setup
 
-The project contains submodules, in order to get them when cloning the project there are two solutions:
+The project uses submodules, in order to get them when cloning the project there are two solutions:
 
 1. Directly when Cloning the project
 > git clone https://github.com/Unep-Isep/SDG-Global-Project.git --recurse-submodules
@@ -66,9 +66,7 @@ To remove the containers:
 This project uses a Nginx reverse-proxy listening on port 80 in order to dispatch the requests to the appropriate service.
 The configuration is located in the [nginx.conf](nginx.conf) file
 - Requests which begin with **/api** will be redirected to the backend service
-- Other requests will be handled by nginx to serve for the frontend
-
-Moreover, Nginx serves all the html, css, js and images files for the frontend.
+- Other requests will be handled by nginx to serve all the html, css, js and images files for the frontend.
 
 To add another service use the syntax below
 > `proxy_pass http://<NAME_OF_THE_SERVICE>:<PORT>;`
