@@ -61,6 +61,9 @@ To remove the containers:
 > docker-compose down
 
 
+for more details on docker-compose, check out [the documentation](https://docs.docker.com/compose/)
+
+
 ## Nginx
 
 This project uses a Nginx reverse-proxy listening on port 80 in order to dispatch the requests to the appropriate service.
