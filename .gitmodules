@@ -1,8 +1,8 @@
-[submodule "SDG-Backend"]
-	path = SDG-Backend
-	url = https://github.com/Unep-Isep/SDG-Backend.git
+[submodule "SDG-Meter-Backend"]
+	path = SDG-Meter-Backend
+	url = https://github.com/UNEP-Economy-Division/SDG-Meter-Backend.git
 	branch = main
-[submodule "SDG-Frontend"]
-	path = SDG-Frontend
-	url = https://github.com/Unep-Isep/SDG-Frontend.git
+[submodule "SDG-Meter-Frontend"]
+	path = SDG-Meter-Frontend
+	url = https://github.com/UNEP-Economy-Division/SDG-Meter-Frontend.git
 	branch = main
